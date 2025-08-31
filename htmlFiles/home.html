@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<div style="height: calc(100vh - 6rem); background-color: rgba(255, 0, 0, 0); width: 100%; overflow: hidden; font-size: clamp(.95rem, .6vw + .8rem, 1.125rem);">
+
+<section id="chillora-home-section" style="text-align:center; padding:4rem 1.3rem 3rem 1.3rem;">
+  <h1 style="font-size:40px; font-weight:bold; color:#4f46e5; margin-bottom:15px;">
+    Welcome to Chillora 🎉
+  </h1>
+  <p style="font-size:18px; color:#555; max-width:700px; margin:0 auto;">
+    A fun space for GenZ — where you can laugh with random jokes 😂, 
+    scroll fresh memes 🖼️, get inspired by quotes ✨, 
+    and check your daily horoscope 🔮.
+  </p>
+</section>
+
+<!-- Entertainment Section -->
+<section style="padding:3rem 1.3rem;">
+  <h2 style="text-align:center; font-size:28px; font-weight:600; margin-bottom:3rem; color:#333;">
+    Entertainment Hub ✨
+  </h2>
+
+  <div style="display:grid; grid-template-columns:repeat(4, 24%); justify-content:center; gap:20px; max-width:1400px; margin:0 auto;">
+
+    <!-- Joke Card -->
+    <div class="entertainment-crds" style="background:#fff; border-radius:16px; padding:20px; text-align:center; width:300px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s;">
+      <h3 style="font-size:20px; font-weight:600; margin-bottom:10px;">Jokes 😂</h3>
+      <p style="color:#666; font-size:14px; margin-bottom:15px;">
+        Enjoy random jokes to brighten your mood instantly!
+      </p>
+      <a onclick="location.href='#jokesPage';" href="#jokes" style="color:#4f46e5; font-weight:500; text-decoration:none;">Try Now <span class="arrowIntert">→</span></a>
+    </div>
+
+    <!-- Meme Card -->
+    <div class="entertainment-crds" style="background:#fff; border-radius:16px; padding:20px; text-align:center; width:300px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s;">
+      <h3 style="font-size:20px; font-weight:600; margin-bottom:10px;">Memes 🖼️</h3>
+      <p style="color:#666; font-size:14px; margin-bottom:15px;">
+        Discover hilarious memes straight from Reddit.
+      </p>
+      <a onclick="location.href='#memesPage';" href="#memes" style="color:#4f46e5; font-weight:500; text-decoration:none;">Explore <span class="arrowIntert">→</span></a>
+    </div>
+
+    <!-- Quotes Card -->
+    <div class="entertainment-crds" style="background:#fff; border-radius:16px; padding:20px; text-align:center; width:300px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s;">
+      <h3 style="font-size:20px; font-weight:600; margin-bottom:10px;">Quotes ✨</h3>
+      <p style="color:#666; font-size:14px; margin-bottom:15px;">
+        Get motivated with powerful and inspiring quotes.
+      </p>
+      <a onclick="location.href='#quotesPage';" href="#quotes" style="color:#4f46e5; font-weight:500; text-decoration:none;">Read <span class="arrowIntert">→</span></a>
+    </div>
+
+    <!-- Horoscope Card -->
+    <div class="entertainment-crds" style="background:#fff; border-radius:16px; padding:20px; text-align:center; width:300px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s;">
+      <h3 style="font-size:20px; font-weight:600; margin-bottom:10px;">Horoscope 🔮</h3>
+      <p style="color:#666; font-size:14px; margin-bottom:15px;">
+        Check your daily stars and unlock cosmic insights.
+      </p>
+      <a onclick="location.href='#horoscopePage';" href="#horoscope" style="color:#4f46e5; font-weight:500; text-decoration:none;">Check <span class="arrowIntert">→</span></a>
+    </div>
+
+  </div>
+
+  <p style="width: max-content; margin: 0 auto; margin-top: 3rem; background-color: #fff; font-size: 1rem; color: #888;">
+    🌟 Start exploring Chillora now and make your day fun & inspiring!
+  </p>
+</section>
+
+<!-- <div onclick="window.scrollBy({top: window.innerHeight, left: 0, behavior: 'smooth'});" id="nextPage2"><div>↓</div></div> -->
+<div onclick="location.href='#jokesPage';" id="nextPage2"><div>↓</div></div>
+
+</div>
+
+
+<div id="jokesPage" style="height: 100vh; width: 100%; padding-top: 3rem; position: relative;
+background-color: rgba(0, 255, 115, 0); display: flex;
+align-items: center;
+justify-content: space-between;">
+
+<div id="jokesLeft" style="width: calc(40% - 2px);; height: 100%; background-color: #76333300; position: relative;">
+  <div id="jokesLeftTop" style="width: 100%; height: 50%; background-color: #aa9c9c00;"></div>
+  <div id="jokesLeftBottom" style="width: 100%; height: 50%; background-color: #5e5e5e00; display: flex;
+  align-items: center; flex-direction: column;">
+    <h2 style="z-index: 2;text-align: center; padding: 2rem 0 1.5rem 0; font-size: 3rem; color: #2f27b8; position: relative;">Amazing Jokes <span>😁</span></h2>
+    <h5 style="color: #222; font-weight: 200; text-align: center; font-size: 1.5rem;">Laughter is the best medicine, aur yaha milega unlimited dose! <span>💉</span></h5>
+    <button style="user-select: none; margin: 3rem 0; padding: 0.6rem 1.7rem; border-radius: 2px; color: #fff; font-size: 1rem">Go to Jokes</button>
+  </div>
+</div>
+<div id="jokesCenterLine" style="height: 80%; width: 2px; background: linear-gradient(0deg, transparent, #2f27b8, transparent);"></div>
+<div id="jokesRight" style="width: calc(60% - 2px); height: 100%; background-color: #e1161600; position: relative;">
+  <h4 style="text-align: center; padding: 3rem; margin-top: 3rem; font-size: 2rem; color: #2f27b8; position: relative;">Jokes Categories <span>🧮</span></h4>
+
+ <div id="jokesCards" style="width: 100%; padding: 1rem 5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
+  
+  <!-- Card 1 -->
+  <div style="background:#fff; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; text-align:center;">
+    <h4 style="font-size:1.3rem; color:#2f27b8; margin-bottom:10px;">😂 Random Jokes</h4>
+    <p style="font-size:0.9rem; color:#555;">Every time you click, ek naya joke milega!</p>
+  </div>
+
+  <!-- Card 2 -->
+  <div style="background:#fff; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; text-align:center;">
+    <h4 style="font-size:1.3rem; color:#2f27b8; margin-bottom:10px;">👶 Kids Jokes</h4>
+    <p style="font-size:0.9rem; color:#555;">Simple aur funny jokes for children (safe, Kids Jokes).</p>
+  </div>
+
+  <!-- Card 3 -->
+  <div style="background:#fff; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; text-align:center;">
+    <h4 style="font-size:1.3rem; color:#2f27b8; margin-bottom:10px;">💻 Programming Jokes</h4>
+    <p style="font-size:0.9rem; color:#555;">Coders ke liye hasi–mazaak ki dose.</p>
+  </div>
+
+  <!-- Card 4 -->
+  <div style="background:#fff; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; text-align:center;">
+    <h4 style="font-size:1.3rem; color:#2f27b8; margin-bottom:10px;">🌑 Dark Humor</h4>
+    <p style="font-size:0.9rem; color:#555;">Thoda edgy, thoda savage – only if you dare! (Adult Jokes)</p>
+  </div>
+
+  <!-- Card 5 -->
+  <div style="background:#fff; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; text-align:center;">
+    <h4 style="font-size:1.3rem; color:#2f27b8; margin-bottom:10px;">🎭 Desi Jokes</h4>
+    <p style="font-size:0.9rem; color:#555;">Apni desi style wali hasi–mazaak collection.</p>
+  </div>
+
+  <!-- Card 6 -->
+  <div style="background:#fff; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; text-align:center;">
+    <h4 style="font-size:1.3rem; color:#2f27b8; margin-bottom:10px;">🎲 Random Fun</h4>
+    <p style="font-size:0.9rem; color:#555;">Mix of everything – har mood ke liye ek joke.</p>
+  </div>
+
+</div>
+</div>
+
+
+</div>
+<div id="memesPage" style="height: 100vh; width: 100%; position: relative; overflow: hidden; display: flex;
+align-items: center;
+justify-content: center; ">
+<div id="memePageContent" style="width: 100%; height: 90%; border-radius: 30px; background: linear-gradient(135deg, rgba(17,0,255,0.15), rgba(255,255,255,0.6)); padding: 80px 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: Arial, sans-serif; position: relative;">
+
+  <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 20px; text-align: center; color: #2f27b8; letter-spacing: -1px;">
+    🤩 Trending Memes Hub
+  </h2>
+  <p style="font-size: 20px; line-height: 1.3; text-align: center; max-width: 850px; margin-bottom: 50px; color: #333;">
+    Internet ka asli entertainment yahin hai! Scroll karo aur discover karo sabse fresh aur relatable memes jo tumhare mood ko instantly lift kar denge.  
+    <br>From savage jokes to daily life comedy — we got it all. 
+  </p>
+  
+  <div id="memePageCards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; width: 100%; max-width: 1200px;">
+    
+    <!-- Card 1 -->
+    <div class="memePageCardsClass" style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <img src="https://media.indiatimes.in/media/content/2015/May/q13_1431339736.jpg" alt="Meme 1" style="width: 100%; height: 175px; object-fit: cover;">
+      <div style="padding: 18px;">
+        <h3 style="font-size: 18px; margin: 0 0 8px; color: #222;">Classic Meme</h3>
+        <p style="font-size: 14px; color: #555;">A timeless meme template that never gets old 😅</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="memePageCardsClass" style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <img src="https://i.ytimg.com/vi/YAxwDNoEyFo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDETLjZG_nPlSCEoLbaRYyrNHIbeQ" alt="Meme 2" style="width: 100%; height: 175px; object-fit: cover;">
+      <div style="padding: 18px;">
+        <h3 style="font-size: 18px; margin: 0 0 8px; color: #222;">Relatable Meme</h3>
+        <p style="font-size: 14px; color: #555;">When life situations become the perfect meme material 🤯</p>
+      </div>
+    </div>
+    
+    <!-- Card 3 -->
+    <div class="memePageCardsClass" style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <img src="https://www.boredpanda.com/blog/wp-content/uploads/2024/06/sigma-face-6.jpg" alt="Meme 3" style="width: 100%; height: 175px; object-fit: cover;">
+      <div style="padding: 18px;">
+        <h3 style="font-size: 18px; margin: 0 0 8px; color: #222;">Savage Meme</h3>
+        <p style="font-size: 14px; color: #555;">Sharp comebacks and witty humor that leave no room for mercy ⚡</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="memePageCardsClass" style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); transition: transform 0.3s;">
+      <img src="https://im.idiva.com/content/2017/Jul/idiva_funny_bollywood_dailogues_thumbnail.jpg?w=450&h=338&cc=1" alt="Meme 4" style="width: 100%; height: 175px; object-fit: cover;">
+      <div style="padding: 18px;">
+        <h3 style="font-size: 18px; margin: 0 0 8px; color: #222;">Desi Meme</h3>
+        <p style="font-size: 14px; color: #555;">Indian jugaad, Bollywood dialogues aur full-on desi humor 😆</p>
+      </div>
+    </div>
+    
+  </div>
+  
+  <button onclick="loadIntoContent('./htmlFiles/memes.html')" id="memePageShowMoreBtn" style="margin-top: 50px; padding: 16px 40px; font-size: 18px; font-weight: bold; border-radius: 10px; color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+    Browse More Memes <span style="font-size: 1.5rem; position: absolute;">🚀</span>
+  </button>
+</div>
+  
+</div>
+
+
+
+<div id="quotesPage" style="height: 100vh; width: 100%; position: relative;
+background-color: rgba(230, 0, 255, 0.28);">
+
+  <!-- Heading -->
+  <h2 style="font-size: 52px; font-weight: 700; margin-bottom: 20px; text-align: center; color: #111; letter-spacing: -1px;">
+    💡 Inspiring Quotes Hub
+  </h2>
+  <p style="font-size: 20px; line-height: 1.6; text-align: center; max-width: 850px; margin-bottom: 50px; color: #333;">
+    Uplift your mood, get inspired, and find motivation! Scroll through carefully curated quotes from famous personalities, movies, and life.  
+    <br>Perfect for daily dose of positivity and humor.
+  </p>
+
+  <!-- Quotes Grid -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 1200px;">
+
+    <!-- Quote Card 1 -->
+    <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); padding: 20px; transition: transform 0.3s;">
+      <p style="font-size: 16px; color: #222; margin-bottom: 12px;">"The best way to predict the future is to create it." 💫</p>
+      <span style="font-size: 14px; color: #555;">– Abraham Lincoln</span>
+    </div>
+
+    <!-- Quote Card 2 -->
+    <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); padding: 20px; transition: transform 0.3s;">
+      <p style="font-size: 16px; color: #222; margin-bottom: 12px;">"Do what you can, with what you have, where you are." ✨</p>
+      <span style="font-size: 14px; color: #555;">– Theodore Roosevelt</span>
+    </div>
+
+    <!-- Quote Card 3 -->
+    <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); padding: 20px; transition: transform 0.3s;">
+      <p style="font-size: 16px; color: #222; margin-bottom: 12px;">"Success is not final, failure is not fatal: It is the courage to continue that counts." 💪</p>
+      <span style="font-size: 14px; color: #555;">– Winston Churchill</span>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <button style="margin-top: 50px; padding: 16px 40px; font-size: 18px; font-weight: bold; border: none; border-radius: 10px; background: #ff6f61; color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: 0.3s;">
+    Load More Quotes 📖
+  </button>
+
+</div>
+<div id="horoscopePage" style="height: 100vh; width: 100%; position: relative;
+background-color: rgba(251, 255, 0, 0.248);">
+sd
+</div>
+
+</html>

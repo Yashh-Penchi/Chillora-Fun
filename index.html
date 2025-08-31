@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+
+    <title>Chillora App | Fun & Vibes</title>
+    <meta
+      name="description"
+      content="Chillora — Your daily dose of fun & vibes. Jokes, memes, quotes and daily horoscopes all in one easy app. Tap, chill, repeat." />
+    <meta
+      name="keywords"
+      content="Chillora, jokes app, memes app, quotes app, horoscope app, fun app, daily vibes, GenZ entertainment, random jokes, trending memes, motivational quotes, zodiac horoscope" />
+    <meta property="og:title" content="Chillora — Your Daily Dose of Fun & Vibes" />
+    <meta
+      property="og:description"
+      content="Chillora brings jokes, trending memes, inspiring quotes and daily horoscopes together. Discover something fun every day." />
+
+    <link rel="stylesheet" href="./cssFiles/style.css" />
+    <link rel="stylesheet" href="./cssFiles/responsive.css" />
+    <link rel="stylesheet" href="./cssFiles/styleHomeResponsive.css" />
+    <link rel="stylesheet" href="./cssFiles/styleContact.css" />
+    
+
+    <!-- Remix Icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <div id="glassEffect"></div>
+      <header id="header" class="headerMain">
+        <h1>Chillora App <i class="ri-heart-line"></i></h1>
+        <nav>
+          <ul>
+            <li onclick="loadIntoContent('./htmlFiles/home.html')" style="overflow: hidden;"><a href="#home">Home</a></li>
+
+            <li class="dropdown">
+              <a style="display: flex; align-items: center; justify-content: center" href="#entertainment">Entertainment <i style="padding-left: 3px; font-size: 20px; " class="ri-arrow-drop-down-line"></i></a>
+              <ul class="dropdown-menu">
+                <li onclick="loadIntoContent('./htmlFiles/jokes.html')" class="funClass"><a href="#jokes">Jokes 😂</a></li>
+                <li onclick="loadIntoContent('./htmlFiles/memes.html')" class="funClass"><a href="#memes">Memes 🖼️</a></li>
+                <li onclick="loadIntoContent('./htmlFiles/quotes.html')" class="funClass"><a href="#quotes">Quotes ✨</a></li>
+                <li onclick="loadIntoContent('./htmlFiles/horoscope.html')" class="funClass"><a href="#horoscope">Horoscope 🔮</a></li>
+              </ul>
+            </li>
+
+            <li onclick="loadIntoContent('./htmlFiles/about.html')" style="overflow: hidden;"><a href="#about">About</a></li>
+            <!-- <li style="overflow: hidden;"><a href="#download" class="btn">Download</a></li> -->
+            <li onclick="loadIntoContent('./htmlFiles/contact.html')" style="overflow: hidden;"><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div id="nav2"><li id="subscribeNav"><a href="">Subscribe</a></li><li onclick="loadIntoContent('./htmlFiles/donate.html')" id="donateNav"><a href="#Donate">Donate</a></li></div>
+      </header>
+
+
+      <section id="content" class="root">
+      <!-- Data by other HTML Files through JS -->
+      </section>
+    </main>
+
+    
+    <script src="./jsFiles/other.js"></script>
+    <script src="./jsFiles/script.js"></script>
+  </body>
+</html>

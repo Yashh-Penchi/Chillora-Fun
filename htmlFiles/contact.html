@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <main>
+    <section class="contact-section">
+      <h2>Contact Chillora</h2>
+      <p>We love hearing from you! Share feedback, questions, or just say hi. <span>💌</span></p>
+
+      <form id="contactForm" class="contact-form" action="https://formspree.io/f/meolgkwp" method="POST">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <div id="nameError" class="error-msg">Please enter your name.</div>
+
+        <input type="email" id="email" placeholder="Your Email" required />
+        <div id="emailError" class="error-msg">Please enter a valid email.</div>
+
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <div id="messageError" class="error-msg">Message cannot be empty.</div>
+
+        <button type="submit"><i style="color: #fff;" class="ri-send-plane-line"></i> Send Message</button>
+      </form>
+
+      <div class="social-icons">
+        <a href="https://instagram.com/chilloraapp" target="_blank"><i class="ri-instagram-line"></i></a>
+        <a href="https://twitter.com/chilloraapp" target="_blank"><i class="ri-twitter-x-line"></i></a>
+        <a href="https://linkedin.com/chilloraapp" target="_blank"><i class="ri-linkedin-line"></i></a>
+        <a href="mailto:team@chillora.app"><i class="ri-mail-line"></i></a>
+      </div>
+    </section>
+    
+  <script>
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      document.getElementById('nameError').style.display = 'none';
+      document.getElementById('emailError').style.display = 'none';
+      document.getElementById('messageError').style.display = 'none';
+
+      let valid = true;
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if(name === '') {
+        document.getElementById('nameError').style.display = 'block';
+        valid = false;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if(!emailPattern.test(email)) {
+        document.getElementById('emailError').style.display = 'block';
+        valid = false;
+      }
+
+      if(message === '') {
+        document.getElementById('messageError').style.display = 'block';
+        valid = false;
+      }
+
+      if(valid) {
+        alert("Thank you! Your message has been sent. 🌟");
+        form.reset();
+      }
+    });
+  </script>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,139 @@
+.entertainment-crds{
+  position: relative;
+}
+.entertainment-crds:hover{
+  transform: translate(0%, -2.5%);
+}
+.arrowIntert,
+.arrowIntert,
+.arrowIntert,
+.arrowIntert {
+  position: absolute;
+  pointer-events: none;
+  color: #352fb0;
+  transition: transform ease 0.3s;
+}
+.entertainment-crds a:hover .arrowIntert {
+  position: absolute;
+  transform: translate(50%, 0%);
+}
+
+#nextPage2 {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 35px;
+  height: 35px;
+  outline: 2px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  z-index: 50;
+  display: flex;
+  user-select: none;
+  opacity: 0.5;
+  align-items: center;
+  justify-content: center;
+  transition: opacity ease 0.3s;
+}
+#nextPage2:hover {
+  opacity: 1;
+  box-shadow: 0px 0px 10px 1px #ffffff;
+}
+#nextPage2 div {
+  position: absolute;
+  top: 30%;
+  transition: top ease 0.2s;
+}
+
+#nextPage2:hover div {
+  top: 90%;
+}
+
+@media (max-width: 992px) {
+  #home-section h1 {
+    font-size: 2rem;
+  }
+  #home-section p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #home-section {
+    padding: 30px 15px;
+  }
+  #home-section h1 {
+    font-size: 1.7rem;
+  }
+  #home-section p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Joke Page Section Style */
+
+#jokesLeftBottom h2 span{
+  position: absolute;
+  scale: 0.5;
+  rotate: -15deg;
+  right: -10%;
+  opacity: 0;
+  transition: all ease 0.3s;
+}
+#jokesLeftBottom h2:hover span{
+  opacity: 1;
+    scale: 0.8;
+  rotate: 0deg;
+  right: -18%;
+}
+#jokesRight h4 span{
+  position: absolute;
+  transition: all ease 0.3s;
+}
+#jokesRight h4:hover span{
+  rotate: 18deg;
+}
+
+#jokesLeftBottom button{
+   background-color: #554ddee9;
+   transition: background-color ease 0.2s;
+}
+#jokesLeftBottom button:hover{
+  background-color: #3028c3;
+  cursor: pointer;
+}
+
+#jokesCards div{
+  position: relative;
+}
+#jokesCards div:hover{
+  transform: translate(0, -5px);
+}
+
+/* MEME Page Section Style */
+
+#memePageShowMoreBtn{
+  background-color: #554ddee9;
+  transition: background-color ease 0.2s;
+}
+#memePageShowMoreBtn:hover{
+  background-color: #3028c3;
+}
+#memePageShowMoreBtn span{
+  /* transform: translate(12px, -20px); */
+  transition: transform ease 0.3s;
+}
+
+#memePageShowMoreBtn:hover span{
+  transform: translate(12px, -20px);
+  transition: transform ease 0.3s;
+}
+
+#memePageCards .memePageCardsClass{
+  position: relative;
+}
+#memePageCards .memePageCardsClass:hover{
+  transform: translate(0, -8px);
+}
+
+/* Quote Page Section Style */
