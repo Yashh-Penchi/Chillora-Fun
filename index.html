@@ -70,7 +70,7 @@
       <p style="font-size: 15px; color: #555; line-height: 1.5;">
       🔥 From laughter to wisdom, Chillora has it all – Jokes, Quotes & Memes waiting for you. Explore now!
       </p>
-      <a href="#" style="display: inline-block; margin-top: 12px; padding: 10px 20px; font-weight: bold; font-size: 14px; border-radius: 6px; background: #222; color: white; text-decoration: none; transition: 0.3s;">
+      <a href="#" style="display: inline-block; margin-top: 12px; padding: 10px 20px; font-weight: bold; font-size: 14px; border-radius: 6px; user-select: none; background: #222; color: white; text-decoration: none; transition: 0.3s;">
         Subscribe →
       </a>
     </div>
@@ -87,11 +87,11 @@
 
     <!-- Store -->
     <div>
-      <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #000;">Donate <span style="color: red;">⭑</span></h3>
+      <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #000; user-select: none;">Donate <span style="color: red;">⭑</span></h3>
       <p style="font-size: 15px; color: #555; line-height: 1.5;">
       💖 “Love using Chillora? Support us with a small donation to keep the jokes, quotes & memes coming!”
       </p>
-      <a id="donateDtn" href="#" style="display: inline-block; margin-top: 12px; padding: 8px 30px 10px 22px; font-size: 15px; font-weight: bold; border-radius: 6px; background: #ff3c3c; color: white; position: relative; text-decoration: none; box-shadow: 0 4px 10px rgba(255,60,60,0.3); transition: 0.3s;">
+      <a id="donateDtn" href="#" onclick="loadIntoContent('./htmlFiles/donate.html'); window.scroll(0, 0)" style="display: inline-block; margin-top: 12px; padding: 8px 30px 10px 22px; font-size: 15px; font-weight: bold; border-radius: 6px; background: #ff3c3c; color: white; position: relative; text-decoration: none; box-shadow: 0 4px 10px rgba(255,60,60,0.3); transition: 0.3s;">
         <span style="font-size: 1.2rem; position: absolute;">💎</span> Donate Now
       </a>
     </div>
@@ -105,11 +105,12 @@
   </div>
 </footer>
 
+  </main>
 
-    </main>
+  
 
-    
-    <script src="./jsFiles/other.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script src="./jsFiles/other.js"></script>
     <script src="./jsFiles/script.js"></script>
   </body>
 </html>

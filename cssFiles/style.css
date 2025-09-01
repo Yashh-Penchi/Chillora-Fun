@@ -3,7 +3,7 @@
   color: #000;
 }
 
-img{
+img, button{
   user-select: none;
 }
 

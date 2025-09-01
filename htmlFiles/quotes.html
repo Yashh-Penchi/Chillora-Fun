@@ -1,0 +1,117 @@
+<div id="ch-quote-page" style="min-height: calc(100vh - 6rem); width:100%; padding:40px 28px; box-sizing:border-box; font-family:Arial, sans-serif;">
+
+  <header style="max-width:900px; margin:0 auto 28px; text-align:center;">
+    <h1 style="font-size:2rem; margin:0 0 1rem 0; color:#3434c3;">✨ Inspiring Quotes Hub</h1>
+    <p style="margin:0; color:#555; font-size:1rem; max-width:750px; margin: 0 auto 1.5rem;">
+      Read, reflect and share timeless quotes that spark motivation, wisdom and humor.
+    </p>
+
+    <!-- Search Author -->
+    <div style="display:flex; justify-content:center; gap:10px; margin-bottom:2rem;">
+      <input id="author-input" type="text" placeholder="Search by author..." 
+             style="padding:10px 14px; border:1px solid #ccc; border-radius:8px; width:250px; font-size:1rem;">
+      <button id="author-search" 
+              style="padding:10px 18px; background:#4f46e5; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:bold;">
+        Search
+      </button>
+    </div>
+  </header>
+
+  <main style="max-width:1000px; margin:0 auto;">
+    <div id="ch-quote-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:22px;">
+      <!-- quotes dynamically load here -->
+    </div>
+
+    <!-- Load more -->
+    <div style="text-align:center; margin-top:28px;">
+      <button id="ch-quote-loadmore" style="padding:12px 26px; background:#4f46e5; color:#fff; border-radius:12px; border:none; font-weight:700; cursor:pointer;">More Quotes 🌟</button>
+    </div>
+
+    <!-- Quote Page Visit Tracking -->
+     <p id="quote-visit-tracking">⚠️ If Error loading quotes. Please reload the page 🔄, otherwise ignore this!!</p>
+     <button id="quote-reload-btn" onclick="location.reload();">Reload Page</button>
+  </main>
+</div>
+
+<style>
+  #quote-visit-tracking {
+    /* display: none; */
+    text-align: center;
+    color: #999;
+    margin-top: 2.5rem;
+    user-select: none;
+  }
+  #quote-reload-btn {
+    /* display: none; */
+    user-select: none;
+    margin-top: 10px;
+    width: 9rem;
+    margin: 2rem auto;
+    padding: 8px 16px;
+  }
+</style>
+
+<script>
+const grid = document.getElementById("ch-quote-grid");
+const loadMoreBtn = document.getElementById("ch-quote-loadmore");
+const searchBtn = document.getElementById("author-search");
+const authorInput = document.getElementById("author-input");
+
+let allQuotes = [];
+
+// load all quotes from GitHub JSON (fast + CORS free)
+async function loadAllQuotes() {
+  try {
+    const res = await fetch("https://raw.githubusercontent.com/JamesFT/Database-Quotes-JSON/master/quotes.json");
+    allQuotes = await res.json();
+    showRandomQuotes(6); // initial
+  } catch (err) {
+    console.error("Error loading quotes:", err);
+    grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#999;">⚠️ Could not load quotes.</p>`;
+  }
+}
+
+function renderQuote(q) {
+  if (!q || !q.quoteText || !q.quoteAuthor) return;
+
+  const card = document.createElement("div");
+  card.style.cssText = "background:#f9f9f9; padding:18px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1);";
+
+  card.innerHTML = `
+    <p style="font-size:1rem; color:#333; margin-bottom:12px;">"${q.quoteText}"</p>
+    <p style="font-size:0.9rem; font-weight:bold; color:#4f46e5; text-align:right;">- ${q.quoteAuthor || "Unknown"}</p>
+  `;
+  grid.appendChild(card);
+}
+
+function showRandomQuotes(count = 6) {
+  for (let i = 0; i < count; i++) {
+    const randomIndex = Math.floor(Math.random() * allQuotes.length);
+    renderQuote(allQuotes[randomIndex]);
+  }
+}
+
+function showAuthorQuotes(author) {
+  grid.innerHTML = "";
+  const matches = allQuotes.filter(q => q.quoteAuthor && q.quoteAuthor.toLowerCase().includes(author.toLowerCase()));
+
+  if (matches.length === 0) {
+    grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#999;">No quotes found for "${author}" 😕</p>`;
+    return;
+  }
+  matches.forEach(q => renderQuote(q));
+}
+
+loadMoreBtn.addEventListener("click", () => showRandomQuotes(6));
+searchBtn.addEventListener("click", () => {
+  const author = authorInput.value.trim();
+  if (author) showAuthorQuotes(author);
+  else { grid.innerHTML = ""; showRandomQuotes(6); }
+});
+authorInput.addEventListener("keypress", e => { if (e.key === "Enter") searchBtn.click(); });
+
+// first load
+loadAllQuotes();
+
+</script>
+

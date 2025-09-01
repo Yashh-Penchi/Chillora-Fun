@@ -15,15 +15,52 @@
   </div>
 
   <a href="#" 
-   id="donatePageDonateBtn" 
-   onmouseenter="this.innerHTML='💖 Donate Now'" 
-   onmouseleave="this.innerHTML='🫱🏻‍🫲🏻 Donate Now'"
-   style="text-shadow: 2px 2px 2px #ffffff1f; display:inline-block; padding:16px 40px; margin-left: 3rem; background:#ff9800; color:white; text-decoration:none; border-radius:10px; font-size:1.2rem; font-weight:bold; transition:0.3s; margin-top:20px;">
-   🫱🏻‍🫲🏻 Donate Now
-</a>
-
+     id="donatePageDonateBtn" 
+     onmouseenter="this.innerHTML='💖 Donate Now'" 
+     onmouseleave="this.innerHTML='🫱🏻‍🫲🏻 Donate Now'"
+     style="text-shadow: 2px 2px 2px #ffffff1f; display:inline-block; padding:16px 40px; margin-left: 3rem; background:#ff9800; color:white; text-decoration:none; border-radius:10px; font-size:1.2rem; font-weight:bold; transition:0.3s; margin-top:20px;">
+     🫱🏻‍🫲🏻 Donate Now
+  </a>
 
   <p style="margin-top:35px; font-size:1rem; color:#666;">
     Every contribution, big or small, makes a huge difference 🌟
   </p>
+
+  <!-- Policy Links -->
+  <div style="margin-top:25px; font-size:0.9rem; color:#888;">
+    <p style="margin:5px 0;">
+      <a href="https://merchant.razorpay.com/policy/RCR0UZ5vD5sKaH/terms" target="_blank" style="color:#ff9800; text-decoration:underline;">Terms and Conditions</a>
+    </p>
+    <p style="margin:5px 0;">
+      <a href="https://merchant.razorpay.com/policy/RCR0UZ5vD5sKaH/refund" target="_blank" style="color:#ff9800; text-decoration:underline;">Cancellation & Refunds</a>
+    </p>
+  </div>
 </div>
+
+<!-- Razorpay Script -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  const donateBtn = document.getElementById('donatePageDonateBtn');
+
+  donateBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    var options = {
+      "key": "rzp_test_RCROdpRHzXGoQE", 
+      "amount": 5000,
+      "currency": "INR",
+      "name": "Chillora App",
+      "description": "Support for Chillora App",
+      "image": "https://yourwebsite.com/logo.png",
+      "handler": function(response){
+          alert("Thank you! Payment successful.\nPayment ID: " + response.razorpay_payment_id);
+      },
+      "theme": {
+        "color": "#ff9800"
+      }
+    };
+
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+  });
+</script>

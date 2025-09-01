@@ -1,0 +1,128 @@
+<div id="ch-horoscope" style="max-width:900px; margin:3rem auto 5rem;">
+  <h2 style="color:#3434c3; text-align:center; margin-bottom:2rem; font-size:clamp(2.5rem, 2vw, 2rem);">🔮 Daily Horoscope</h2>
+
+  <p style="text-align:center; color:#555; margin:0 auto 1rem; max-width:800px;font-size: 1.5rem; line-height:1.2;">
+    Explore your daily horoscope and uncover what the universe has planned for you today.  
+  </p>
+    <p style="text-align:center; color:#555; margin:0 auto 3rem; max-width:650px; line-height:1.6;">
+      <span style="background-color: #7d7ddf29;">Select your zodiac sign below</span> to reveal insights about your mood, luck, and compatibility.
+    </p>
+
+  <div id="horo-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:16px; margin-bottom:30px;">
+    <button class="horo-card" data-sign="aries">♈ Aries</button>
+    <button class="horo-card" data-sign="taurus">♉ Taurus</button>
+    <button class="horo-card" data-sign="gemini">♊ Gemini</button>
+    <button class="horo-card" data-sign="cancer">♋ Cancer</button>
+    <button class="horo-card" data-sign="leo">♌ Leo</button>
+    <button class="horo-card" data-sign="virgo">♍ Virgo</button>
+    <button class="horo-card" data-sign="libra">♎ Libra</button>
+    <button class="horo-card" data-sign="scorpio">♏ Scorpio</button>
+    <button class="horo-card" data-sign="sagittarius">♐ Sagittarius</button>
+    <button class="horo-card" data-sign="capricorn">♑ Capricorn</button>
+    <button class="horo-card" data-sign="aquarius">♒ Aquarius</button>
+    <button class="horo-card" data-sign="pisces">♓ Pisces</button>
+  </div>
+
+  <!-- Result Box -->
+  <div id="horo-result" style="display:none; background:#fff; padding:28px; border-radius:14px; box-shadow:0 8px 30px rgba(0,0,0,0.08); margin-bottom:2rem;">
+    <h3 id="horo-title" style="margin-top:0; color:#4f46e5;"></h3>
+    <p id="horo-date" style="color:#666; margin-bottom:1rem;"></p>
+    <p id="horo-desc" style="font-size:1.1rem; line-height:1.6; color:#222; margin-bottom:1.5rem;"></p>
+    
+    <div id="horo-info" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:16px;">
+      <!-- Filled dynamically -->
+    </div>
+  </div>
+
+  <!-- Closing text -->
+  <p style="text-align:center; color:#666; font-size:0.95rem; max-width:700px; margin:0 auto;">
+    🌌 Remember, <span style="background-color: #7e7ef223;">horoscopes are for guidance and reflection — not fixed predictions</span>.  
+    Let them inspire you, but always trust your own journey. ✨
+  </p>
+</div>
+
+<!-- Error Popup -->
+<div id="horo-error" style="
+  display:none; 
+  position:fixed; 
+  top:0; left:0; right:0; bottom:0; 
+  background:rgba(0,0,0,0.5); 
+  justify-content:center; 
+  align-items:center; 
+  z-index:1000;">
+  <div style="background:#fff; padding:2rem; border-radius:12px; text-align:center; max-width:350px; width:90%; box-shadow:0 8px 25px rgba(0,0,0,0.2);">
+    <h3 style="margin:0; color:#e53935;">⚠️ Sorry!</h3>
+    <p style="margin:1rem 0; color:#444;">This is not available yet. Please try again later.</p>
+    <button onclick="document.getElementById('horo-error').style.display='none'; loadIntoContent('./htmlFiles/home.html'); window.scroll(0, 0);" style="padding:0.6rem 1.2rem; border:none; border-radius:8px; background:#4f46e5; color:#fff; font-weight:600; cursor:pointer;">OK</button>
+  </div>
+</div>
+
+
+
+<style>
+  .horo-card {
+    padding:1.5rem;
+    border-radius:12px;
+    border:1px solid #e0e0f0;
+    background:#fafaff;
+    font-size:1rem;
+    font-weight:600;
+    color:#333;
+    cursor:pointer;
+    transition:all .25s;
+  }
+  .horo-card:hover {
+    background:#534cd5;
+    color:#fff;
+    transform:translateY(-4px);
+    box-shadow:0 6px 20px rgba(79,70,229,0.25);
+  }
+  .horo-info-card {
+    background:#f9f9ff;
+    border-radius:10px;
+    padding:14px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,0.04);
+  }
+  .horo-info-card span {
+    display:block;
+    font-size:0.9rem;
+    color:#666;
+    margin-top:4px;
+  }
+</style>
+<script>
+const horoResultBox_01 = document.getElementById("horo-result");
+const horoTitleEl_01 = document.getElementById("horo-title");
+const horoDateEl_01 = document.getElementById("horo-date");
+const horoDescEl_01 = document.getElementById("horo-desc");
+const horoInfoEl_01 = document.getElementById("horo-info");
+
+document.querySelectorAll(".horo-card").forEach(cardBtn_01 => {
+  cardBtn_01.addEventListener("click", async () => {
+    const horoSign_01 = cardBtn_01.dataset.sign;
+    try {
+      const res_01 = await fetch(`https://aztro.sameerkumar.website/?sign=${horoSign_01}&day=today`, { method: "POST" });
+      const data_01 = await res_01.json();
+
+      horoTitleEl_01.textContent = horoSign_01.toUpperCase() + " " + data_01.date_range;
+      horoDateEl_01.textContent = "📅 " + data_01.current_date;
+      horoDescEl_01.textContent = "✨ " + data_01.description;
+
+      horoInfoEl_01.innerHTML = `
+        <div class="horo-info-card">😊 ${data_01.mood}<span>Mood</span></div>
+        <div class="horo-info-card">💞 ${data_01.compatibility}<span>Compatibility</span></div>
+        <div class="horo-info-card">🎲 ${data_01.lucky_number}<span>Lucky Number</span></div>
+        <div class="horo-info-card">⏰ ${data_01.lucky_time}<span>Lucky Time</span></div>
+        <div class="horo-info-card">🎨 ${data_01.color}<span>Color</span></div>
+      `;
+
+      horoResultBox_01.style.display = "block";
+      horoResultBox_01.scrollIntoView({ behavior: "smooth" });
+          } catch (err_01) {
+            console.error("Horoscope fetch failed:", err_01);
+            document.getElementById('horo-error').style.display = 'flex';
+          }
+  });
+});
+</script>
