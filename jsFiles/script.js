@@ -20,19 +20,17 @@ loadIntoContent('./htmlFiles/home.html');
     }
   });
 
-// async function loadIntoContent(url) {
-//   const spaRes = await fetch(url);
-//   const spaText = await spaRes.text();
-//   const spaDoc = new DOMParser().parseFromString(spaText, 'text/html');
-//   const spaBody = spaDoc.body.innerHTML;
-//   document.getElementById('content').innerHTML = spaBody;
-// }
 
-// async function initPage() {
-//   await loadIntoContent('./htmlFiles/home.html');
-//   initOtherPage(); //baad me load hoga
-// }
-
-// initPage();
-
-
+function goToTopShow() {
+    document.getElementById('goToTop').style.display = 'block';
+}
+function goToTopHide() {
+    document.getElementById('goToTop').style.display = 'none';
+}
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        goToTopShow();
+    } else {
+        goToTopHide();
+    }
+});

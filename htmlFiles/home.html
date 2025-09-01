@@ -19,7 +19,7 @@
     Entertainment Hub ✨
   </h2>
 
-  <div style="display:grid; grid-template-columns:repeat(4, 24%); justify-content:center; gap:20px; max-width:1400px; margin:0 auto;">
+  <div class="cards-box" style="display:grid; grid-template-columns:repeat(4, 24%); justify-content:center; gap:20px; max-width:1400px; margin:0 auto;">
 
     <!-- Joke Card -->
     <div class="entertainment-crds" style="background:#fff; border-radius:16px; padding:20px; text-align:center; width:300px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s;">
@@ -65,7 +65,7 @@
 </section>
 
 <!-- <div onclick="window.scrollBy({top: window.innerHeight, left: 0, behavior: 'smooth'});" id="nextPage2"><div>↓</div></div> -->
-<div onclick="location.href='#jokesPage';" id="nextPage2"><div>↓</div></div>
+<div onclick="location.href='#jokesPage'; goToTopShow()" id="nextPage2"><div>↓</div></div>
 
 </div>
 
@@ -76,7 +76,10 @@ align-items: center;
 justify-content: space-between;">
 
 <div id="jokesLeft" style="width: calc(40% - 2px);; height: 100%; background-color: #76333300; position: relative;">
-  <div id="jokesLeftTop" style="width: 100%; height: 50%; background-color: #aa9c9c00;"></div>
+  <div id="jokesLeftTop" style="width: 60%; height: 50%; margin: 0 auto; background-color: #aa9c9c00; position: relative; display: flex;
+  align-items: center;
+  justify-content: center; user-select: none; background-image: url(./Assets/Images/kids-children-laughing-together-vector-600nw-1451766956.webp); background-position: center; background-size: contain; background-repeat: no-repeat;">
+  </div>
   <div id="jokesLeftBottom" style="width: 100%; height: 50%; background-color: #5e5e5e00; display: flex;
   align-items: center; flex-direction: column;">
     <h2 style="z-index: 2;text-align: center; padding: 2rem 0 1.5rem 0; font-size: 3rem; color: #2f27b8; position: relative;">Amazing Jokes <span>😁</span></h2>
@@ -88,7 +91,7 @@ justify-content: space-between;">
 <div id="jokesRight" style="width: calc(60% - 2px); height: 100%; background-color: #e1161600; position: relative;">
   <h4 style="text-align: center; padding: 3rem; margin-top: 3rem; font-size: 2rem; color: #2f27b8; position: relative;">Jokes Categories <span>🧮</span></h4>
 
- <div id="jokesCards" style="width: 100%; padding: 1rem 5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
+ <div id="jokesCards" class="cards-box" style="width: 100%; padding: 1rem 5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
   
   <!-- Card 1 -->
   <div style="background:#fff; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; text-align:center;">
@@ -144,11 +147,11 @@ justify-content: center; ">
     <br>From savage jokes to daily life comedy — we got it all. 
   </p>
   
-  <div id="memePageCards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; width: 100%; max-width: 1200px;">
+  <div id="memePageCards" class="cards-box" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; width: 100%; max-width: 1200px;">
     
     <!-- Card 1 -->
     <div class="memePageCardsClass" style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); transition: transform 0.3s;">
-      <img src="https://media.indiatimes.in/media/content/2015/May/q13_1431339736.jpg" alt="Meme 1" style="width: 100%; height: 175px; object-fit: cover;">
+      <img src="./Assets/Images/q13_1431339736.jpg" alt="Meme 1" style="width: 100%; height: 175px; object-fit: cover;">
       <div style="padding: 18px;">
         <h3 style="font-size: 18px; margin: 0 0 8px; color: #222;">Classic Meme</h3>
         <p style="font-size: 14px; color: #555;">A timeless meme template that never gets old 😅</p>
@@ -157,7 +160,7 @@ justify-content: center; ">
 
     <!-- Card 2 -->
     <div class="memePageCardsClass" style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); transition: transform 0.3s;">
-      <img src="https://i.ytimg.com/vi/YAxwDNoEyFo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDETLjZG_nPlSCEoLbaRYyrNHIbeQ" alt="Meme 2" style="width: 100%; height: 175px; object-fit: cover;">
+      <img src="./Assets/Images/meme-relatable.jpg" alt="Meme 2" style="width: 100%; height: 175px; object-fit: cover;">
       <div style="padding: 18px;">
         <h3 style="font-size: 18px; margin: 0 0 8px; color: #222;">Relatable Meme</h3>
         <p style="font-size: 14px; color: #555;">When life situations become the perfect meme material 🤯</p>
@@ -166,7 +169,7 @@ justify-content: center; ">
     
     <!-- Card 3 -->
     <div class="memePageCardsClass" style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); transition: transform 0.3s;">
-      <img src="https://www.boredpanda.com/blog/wp-content/uploads/2024/06/sigma-face-6.jpg" alt="Meme 3" style="width: 100%; height: 175px; object-fit: cover;">
+      <img src="./Assets/Images/sigma-face-6.jpg" alt="Meme 3" style="width: 100%; height: 175px; object-fit: cover;">
       <div style="padding: 18px;">
         <h3 style="font-size: 18px; margin: 0 0 8px; color: #222;">Savage Meme</h3>
         <p style="font-size: 14px; color: #555;">Sharp comebacks and witty humor that leave no room for mercy ⚡</p>
@@ -175,7 +178,7 @@ justify-content: center; ">
 
     <!-- Card 4 -->
     <div class="memePageCardsClass" style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); transition: transform 0.3s;">
-      <img src="https://im.idiva.com/content/2017/Jul/idiva_funny_bollywood_dailogues_thumbnail.jpg?w=450&h=338&cc=1" alt="Meme 4" style="width: 100%; height: 175px; object-fit: cover;">
+      <img src="./Assets/Images/idiva_funny_bollywood_dailogues_thumbnail.webp" alt="Meme 4" style="width: 100%; height: 175px; object-fit: cover;">
       <div style="padding: 18px;">
         <h3 style="font-size: 18px; margin: 0 0 8px; color: #222;">Desi Meme</h3>
         <p style="font-size: 14px; color: #555;">Indian jugaad, Bollywood dialogues aur full-on desi humor 😆</p>
@@ -184,7 +187,7 @@ justify-content: center; ">
     
   </div>
   
-  <button onclick="loadIntoContent('./htmlFiles/memes.html')" id="memePageShowMoreBtn" style="margin-top: 50px; padding: 16px 40px; font-size: 18px; font-weight: bold; border-radius: 10px; color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+  <button onclick="loadIntoContent('./htmlFiles/memes.html');" id="memePageShowMoreBtn" style="margin-top: 50px; padding: 16px 40px; font-size: 18px; font-weight: bold; border-radius: 10px; color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
     Browse More Memes <span style="font-size: 1.5rem; position: absolute;">🚀</span>
   </button>
 </div>
@@ -193,11 +196,12 @@ justify-content: center; ">
 
 
 
-<div id="quotesPage" style="height: 100vh; width: 100%; position: relative;
-background-color: rgba(230, 0, 255, 0.28);">
+<div id="quotesPage" style="height: 100vh; width: 100%; position: relative; padding-top: 8rem; display: flex;
+align-items: center; flex-direction: column;
+background-color: rgba(230, 0, 255, 0);">
 
   <!-- Heading -->
-  <h2 style="font-size: 52px; font-weight: 700; margin-bottom: 20px; text-align: center; color: #111; letter-spacing: -1px;">
+  <h2 style="font-size: 3.4rem; font-weight: 700; margin-bottom: 2rem; text-align: center; color: #2f27b8; letter-spacing: -1px;">
     💡 Inspiring Quotes Hub
   </h2>
   <p style="font-size: 20px; line-height: 1.6; text-align: center; max-width: 850px; margin-bottom: 50px; color: #333;">
@@ -206,7 +210,7 @@ background-color: rgba(230, 0, 255, 0.28);">
   </p>
 
   <!-- Quotes Grid -->
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 1200px;">
+  <div id="quotesPageCards" class="cards-box" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; max-width: 1200px; margin-bottom: 2rem;">
 
     <!-- Quote Card 1 -->
     <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); padding: 20px; transition: transform 0.3s;">
@@ -222,21 +226,72 @@ background-color: rgba(230, 0, 255, 0.28);">
 
     <!-- Quote Card 3 -->
     <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); padding: 20px; transition: transform 0.3s;">
-      <p style="font-size: 16px; color: #222; margin-bottom: 12px;">"Success is not final, failure is not fatal: It is the courage to continue that counts." 💪</p>
-      <span style="font-size: 14px; color: #555;">– Winston Churchill</span>
+      <p style="font-size: 16px; color: #222; margin-bottom: 12px;">"If you can't do great things, do small things in a great way." ⚡</p>
+      <span style="font-size: 14px; color: #555;">– Napoleon Hill</span>  
     </div>
 
   </div>
 
-  <!-- CTA -->
-  <button style="margin-top: 50px; padding: 16px 40px; font-size: 18px; font-weight: bold; border: none; border-radius: 10px; background: #ff6f61; color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: 0.3s;">
-    Load More Quotes 📖
+  <div id="dayOfQuote" style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); padding: 20px; transition: transform 0.3s;">
+    <h5 style="text-align: center; color: #2f27b8; font-size: 1rem;">Day Of Quote! 🫡</h5>
+      <p style="font-size: 16px; color: #222; margin-bottom: 12px;">"Success is not final, failure is not fatal: It is the courage to continue that counts." 💪</p>
+      <span style="font-size: 14px; color: #555;">– Winston Churchill</span>
+    </div>
+
+  <button onclick="loadIntoContent('./htmlFiles/quotes.html')" id="quotePageShowMoreBtn" style="margin-top: 50px; padding: 16px 40px; font-size: 18px; font-weight: bold; border-radius: 10px; color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+    Load More Quotes<span style="font-size: 1.5rem; position: absolute;">📖</span>
   </button>
 
 </div>
-<div id="horoscopePage" style="height: 100vh; width: 100%; position: relative;
-background-color: rgba(251, 255, 0, 0.248);">
-sd
+<div id="horoscopePage" style="height: 100vh; width: 100%; position: relative; overflow: hidden; display: flex;
+align-items: center; justify-content: center;">
+
+  <div id="horoscopePageContent" style="width: 100%; height: 90%; border-radius: 30px; background: linear-gradient(135deg, rgba(17,0,255,0.15), rgba(255,255,255,0.6)); padding: 60px 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: Arial, sans-serif; position: relative;">
+
+    <!-- Heading -->
+    <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 20px; text-align: center; color: #b85c2f; letter-spacing: -1px;">
+      🔮 Your Daily Horoscope
+    </h2>
+    <p style="font-size: 18px; line-height: 1.4; text-align: center; max-width: 850px; margin-bottom: 40px; color: #333;">
+      Stars aaj kya keh rahe hai? Discover insights for your zodiac sign and start your day with cosmic guidance ✨
+    </p>
+
+    <!-- Zodiac Cards Grid -->
+    <div id="horoscopeCardsBox" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; width: 100%; max-width: 1100px;">
+      
+      <!-- Aries -->
+      <div style="background: #fff; border-radius: 16px; padding: 20px; text-align: center; box-shadow: 0 6px 16px rgba(0,0,0,0.1); transition: transform 0.3s;">
+        <h3 style="font-size: 20px; margin: 0 0 10px; color: #c0392b;">♈ Aries</h3>
+        <p style="font-size: 14px; color: #555;">Aaj nayi shuruaat ke liye perfect din hai.</p>
+      </div>
+
+      <!-- Taurus -->
+      <div style="background: #fff; border-radius: 16px; padding: 20px; text-align: center; box-shadow: 0 6px 16px rgba(0,0,0,0.1); transition: transform 0.3s;">
+        <h3 style="font-size: 20px; margin: 0 0 10px; color: #27ae60;">♉ Taurus</h3>
+        <p style="font-size: 14px; color: #555;">Apni stability ko value do aur patience rakho.</p>
+      </div>
+
+      <!-- Gemini -->
+      <div style="background: #fff; border-radius: 16px; padding: 20px; text-align: center; box-shadow: 0 6px 16px rgba(0,0,0,0.1); transition: transform 0.3s;">
+        <h3 style="font-size: 20px; margin: 0 0 10px; color: #2980b9;">♊ Gemini</h3>
+        <p style="font-size: 14px; color: #555;">Communication aaj tumhari strength hai.</p>
+      </div>
+
+      <!-- Cancer -->
+      <div style="background: #fff; border-radius: 16px; padding: 20px; text-align: center; box-shadow: 0 6px 16px rgba(0,0,0,0.1); transition: transform 0.3s;">
+        <h3 style="font-size: 20px; margin: 0 0 10px; color: #8e44ad;">♋ Cancer</h3>
+        <p style="font-size: 14px; color: #555;">Emotions ko balance karke decisions lo.</p>
+      </div>
+    </div>
+
+    <button onclick="loadIntoContent('./htmlFiles/horoscope.html')" id="horoscopeShowMoreBtn" style="margin-top: 50px; padding: 16px 40px; font-size: 18px; font-weight: bold; border-radius: 10px; color: white; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+      View Full Horoscope <span>⭐</span>
+    </button>
+  </div>
+
+  <div id="goToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); goToTopHide()" style="position: fixed; background-color: #f4f4f4; padding: 0.4rem 1rem 0.4rem 1rem; top: 50%; transform: translate(0, -50%); box-shadow: 2px 2px 5px 0px #00000017; right: 0rem; border-radius: 2px; cursor: pointer;"><i style="font-size: 1.5rem; color: #555;" class="ri-arrow-up-double-line"></i></div>
+
 </div>
+
 
 </html>

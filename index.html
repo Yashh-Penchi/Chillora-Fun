@@ -30,34 +30,82 @@
   <body>
     <main>
       <div id="glassEffect"></div>
+
+      <!-- Header -->
       <header id="header" class="headerMain">
         <h1>Chillora App <i class="ri-heart-line"></i></h1>
         <nav>
           <ul>
-            <li onclick="loadIntoContent('./htmlFiles/home.html')" style="overflow: hidden;"><a href="#home">Home</a></li>
+            <li onclick="loadIntoContent('./htmlFiles/home.html'); window.scroll(0, 0)" style="overflow: hidden;"><a href="#home">Home</a></li>
 
             <li class="dropdown">
               <a style="display: flex; align-items: center; justify-content: center" href="#entertainment">Entertainment <i style="padding-left: 3px; font-size: 20px; " class="ri-arrow-drop-down-line"></i></a>
               <ul class="dropdown-menu">
-                <li onclick="loadIntoContent('./htmlFiles/jokes.html')" class="funClass"><a href="#jokes">Jokes 😂</a></li>
-                <li onclick="loadIntoContent('./htmlFiles/memes.html')" class="funClass"><a href="#memes">Memes 🖼️</a></li>
-                <li onclick="loadIntoContent('./htmlFiles/quotes.html')" class="funClass"><a href="#quotes">Quotes ✨</a></li>
-                <li onclick="loadIntoContent('./htmlFiles/horoscope.html')" class="funClass"><a href="#horoscope">Horoscope 🔮</a></li>
+                <li onclick="loadIntoContent('./htmlFiles/jokes.html'); window.scroll(0, 0)" class="funClass"><a href="#jokes">Jokes 😂</a></li>
+                <li onclick="loadIntoContent('./htmlFiles/memes.html'); window.scroll(0, 0);" class="funClass"><a href="#memes">Memes 🖼️</a></li>
+                <li onclick="loadIntoContent('./htmlFiles/quotes.html'); window.scroll(0, 0)" class="funClass"><a href="#quotes">Quotes ✨</a></li>
+                <li onclick="loadIntoContent('./htmlFiles/horoscope.html'); window.scroll(0, 0)" class="funClass"><a href="#horoscope">Horoscope 🔮</a></li>
               </ul>
             </li>
 
-            <li onclick="loadIntoContent('./htmlFiles/about.html')" style="overflow: hidden;"><a href="#about">About</a></li>
+            <li onclick="loadIntoContent('./htmlFiles/about.html'); window.scroll(0, 0)" style="overflow: hidden;"><a href="#about">About</a></li>
             <!-- <li style="overflow: hidden;"><a href="#download" class="btn">Download</a></li> -->
-            <li onclick="loadIntoContent('./htmlFiles/contact.html')" style="overflow: hidden;"><a href="#contact">Contact</a></li>
+            <li onclick="loadIntoContent('./htmlFiles/contact.html'); contactValidation(); window.scroll(0, 0)" style="overflow: hidden;"><a href="#">Contact</a></li>
           </ul>
         </nav>
-        <div id="nav2"><li id="subscribeNav"><a href="">Subscribe</a></li><li onclick="loadIntoContent('./htmlFiles/donate.html')" id="donateNav"><a href="#Donate">Donate</a></li></div>
+        <div id="nav2"><li id="subscribeNav"><a href="">Subscribe</a></li><li onclick="loadIntoContent('./htmlFiles/donate.html'); window.scroll(0, 0)" id="donateNav"><a href="#Donate">Donate</a></li></div>
       </header>
 
 
       <section id="content" class="root">
-      <!-- Data by other HTML Files through JS -->
+      <!-- Data from other HTML Files through JS -->
       </section>
+
+<!-- Footer -->
+<footer style="background: #f1f1f1; padding: 60px 40px 30px; font-family: Arial, sans-serif; color: #222;">
+  <div style="max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+    
+    <div>
+      <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #000;">Explore Now! <span style="color: red;">⭑</span></h3>
+      <p style="font-size: 15px; color: #555; line-height: 1.5;">
+      🔥 From laughter to wisdom, Chillora has it all – Jokes, Quotes & Memes waiting for you. Explore now!
+      </p>
+      <a href="#" style="display: inline-block; margin-top: 12px; padding: 10px 20px; font-weight: bold; font-size: 14px; border-radius: 6px; background: #222; color: white; text-decoration: none; transition: 0.3s;">
+        Subscribe →
+      </a>
+    </div>
+
+    <!-- Links -->
+    <div>
+      <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #000;">Entertainment <span style="color: red;">⭑</span></h3>
+      <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+        <li onclick="loadIntoContent('./htmlFiles/jokes.html')"><a href="#" style="color: #333; text-decoration: none; font-size: 15px;">Try Jokes 😂</a></li>
+        <li onclick="loadIntoContent('./htmlFiles/memes.html')"><a href="#" style="color: #333; text-decoration: none; font-size: 15px;">Explore Memes 😁</a></li>
+        <li onclick="loadIntoContent('./htmlFiles/quotes.html')"><a href="#" style="color: #333; text-decoration: none; font-size: 15px;">Read Quotes ✨</a></li>
+      </ul>
+    </div>
+
+    <!-- Store -->
+    <div>
+      <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #000;">Donate <span style="color: red;">⭑</span></h3>
+      <p style="font-size: 15px; color: #555; line-height: 1.5;">
+      💖 “Love using Chillora? Support us with a small donation to keep the jokes, quotes & memes coming!”
+      </p>
+      <a id="donateDtn" href="#" style="display: inline-block; margin-top: 12px; padding: 8px 30px 10px 22px; font-size: 15px; font-weight: bold; border-radius: 6px; background: #ff3c3c; color: white; position: relative; text-decoration: none; box-shadow: 0 4px 10px rgba(255,60,60,0.3); transition: 0.3s;">
+        <span style="font-size: 1.2rem; position: absolute;">💎</span> Donate Now
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Bottom strip -->
+  <div style="border-top: 1px solid #ddd; margin-top: 40px; padding-top: 20px; text-align: center; font-size: 14px; color: #777;">
+   © 2025 Chillora | All Rights Reserved. <br>
+    <!-- <span style="font-size: 12px;">Not affiliated with Mojang or Microsoft.</span> -->
+  </div>
+</footer>
+
+
     </main>
 
     

@@ -3,6 +3,10 @@
   color: #000;
 }
 
+img{
+  user-select: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -212,6 +216,7 @@ nav ul li:hover a::after {
   justify-content: center;
   border: 1px solid #c7c6c6e9;
   height: 80%;
+  border-radius: 10px;
 }
 
 .dropdown-menu li a::after {
@@ -260,6 +265,38 @@ header #nav2 #donateNav a:hover{
   background-color: #352ebe;
   }
 
+/* footer{
+  position: relative;
+  width: 100%;
+  padding-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#footerContainer{
+  position: relative;
+  width: 100%;
+  display: flex;
+  border-radius: 0 0 50px 50px;
+  backdrop-filter: blur(12px);
+  align-items: center;
+  justify-content: center;
+  height: 12rem;
+  background-color: #c4e4ff00;
+} */
+ 
+
+#donateDtn span{
+  right: 0;
+  top: 45%;
+  transform: translate(0%, -50%);
+  transition: transform ease 0.3s;
+}
+#donateDtn:hover span{
+  transform: translate(50%, -50%);
+}
+
+/* Root Container */
 #content{
   /* padding-top: 6rem; */
   padding-inline: clamp(1rem, 3vw + 2rem, 5rem);

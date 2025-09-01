@@ -20,7 +20,7 @@
 
 #nextPage2 {
   position: absolute;
-  top: 18%;
+  top: 16.5%;
   left: 50%;
   transform: translate(-50%, 50%);
   width: 35px;
@@ -69,6 +69,13 @@
     font-size: 0.95rem;
   }
 }
+
+.cards-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
 
 /* Joke Page Section Style */
 
@@ -136,4 +143,71 @@
   transform: translate(0, -8px);
 }
 
+
 /* Quote Page Section Style */
+
+#quotePageShowMoreBtn{
+  background-color: #554ddee9;
+  transition: background-color ease 0.2s;
+}
+#quotePageShowMoreBtn:hover{
+  background-color: #3028c3;
+}
+#quotePageShowMoreBtn span{
+  transform: translate(0, -7px);
+  transition: transform ease 0.3s;
+}
+
+#quotePageShowMoreBtn:hover span{
+  transform: rotate(10deg);
+}
+#quotesPageCards div, #dayOfQuote{
+  position: relative;
+}
+#quotesPageCards div:hover, #dayOfQuote:hover{
+  transform: translate(0, -5px);
+}
+
+
+/* Horoscope Page Section Style */
+
+#horoscopeShowMoreBtn{
+  background-color: #554ddee9;
+  transition: background-color ease 0.2s;
+}
+#horoscopeShowMoreBtn:hover{
+  background-color: #3028c3;
+}
+#horoscopeShowMoreBtn span{
+  position: absolute;
+  transition: transform ease 0.3s;
+}
+
+#horoscopeShowMoreBtn:hover span{
+  transform: rotate(-70deg) scale(1.3);
+}
+#horoscopeCardsBox div{
+  position: relative;
+}
+#horoscopeCardsBox div:hover{
+  transform: translate(0, -5px);
+}
+#goToTop{
+  display: none;
+}
+
+.card{
+  position: relative;
+  transition: transform ease 0.3s;
+}
+.card:hover{
+  transform: translate(0, -5px);
+}
+
+#donatePageDonateBtn{
+  background-color: #ff9800;
+  transition: background-color ease 0.3s;
+}
+#donatePageDonateBtn:hover{
+  background-color: #de8500;
+}

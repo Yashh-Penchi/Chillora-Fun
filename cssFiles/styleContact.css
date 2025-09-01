@@ -22,7 +22,7 @@
 .contact-section p span{
   position: absolute;
   top: 50%;
-  right: 5%;
+  right: -5%;
   transform: translate(0%, -50%);
   transition: scale ease 0.2s;
 }
