@@ -25,6 +25,33 @@
 
     <!-- Remix Icon CDN -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- OneSignal SDK -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "1a55bec9-9d4e-47ca-aa46-adf17ebaf087",
+      safari_web_id: "web.onesignal.auto.0818a4e7-118f-4fc1-b0e2-07892e811a2a",
+      notifyButton: { enable: false },
+    });
+
+      document.querySelectorAll(".subscribeBtnJS").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const permission = await OneSignal.Notifications.requestPermission();
+        if (permission === "granted") {
+          alert("✅ Subscribed! You will get notifications.");
+        } else {
+          alert("❌ Subscription failed or blocked.");
+        }
+      });
+    });
+
+  });
+</script>
+
+  
   </head>
   <body>
     <main>
@@ -52,7 +79,7 @@
             <li onclick="loadIntoContent('./htmlFiles/contact.html'); window.scroll(0, 0)" style="overflow: hidden;"><a href="#">Contact</a></li>
           </ul>
         </nav>
-        <div id="nav2"><li id="subscribeNav"><a href="">Subscribe</a></li><li onclick="loadIntoContent('./htmlFiles/donate.html'); window.scroll(0, 0)" id="donateNav"><a href="#Donate">Donate</a></li></div>
+        <div id="nav2"><li id="subscribeNav" class="subscribeBtnJS"><a href="">Subscribe</a></li><li onclick="loadIntoContent('./htmlFiles/donate.html'); window.scroll(0, 0)" id="donateNav"><a href="#Donate">Donate</a></li></div>
       </header>
 
 
@@ -69,7 +96,7 @@
       <p style="font-size: 15px; color: #555; line-height: 1.5;">
       🔥 From laughter to wisdom, Chillora has it all – Jokes, Quotes & Memes waiting for you. Explore now!
       </p>
-      <a href="#" style="display: inline-block; margin-top: 12px; padding: 10px 20px; font-weight: bold; font-size: 14px; border-radius: 6px; user-select: none; background: #222; color: white; text-decoration: none; transition: 0.3s;">
+      <a href="#" class="subscribeBtnJS" style="display: inline-block; margin-top: 12px; padding: 10px 20px; font-weight: bold; font-size: 14px; border-radius: 6px; user-select: none; background: #222; color: white; text-decoration: none; transition: 0.3s;">
         Subscribe →
       </a>
     </div>
@@ -107,7 +134,6 @@
   </main>
 
   
-
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         <script src="./jsFiles/other.js"></script>
     <script src="./jsFiles/script.js"></script>
