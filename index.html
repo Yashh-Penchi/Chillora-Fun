@@ -55,6 +55,18 @@
   </head>
   <body>
     <main>
+
+      <div id="bestForDesktop">
+         <h2>Use Desktop for best Experience</h2>
+        <p>Enjoy the full Chillora experience on your desktop!</p>
+        <button>Go for mobile</button>
+        <script>
+          document.querySelector("#bestForDesktop button").addEventListener("click", () => {
+            document.querySelector("#bestForDesktop").style.display = "none";
+          });
+        </script>
+      </div>
+
       <div id="glassEffect"></div>
 
       <!-- Header -->

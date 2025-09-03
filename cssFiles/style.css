@@ -296,6 +296,62 @@ header #nav2 #donateNav a:hover{
   transform: translate(50%, -50%);
 }
 
+
+/* Best For Desktop  */
+
+          @media (min-width: 820px) {
+  #bestForDesktop{
+    display: none;
+  }
+}
+          @media (max-width: 768px) {
+            #bestForDesktop {
+              display: none;
+            }
+            #bestForDesktop {
+              display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            /* top: 50%; */
+            /* left: 50%; */
+            /* transform: translate(-50%, -50%); */
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+          
+          #bestForDesktop h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            color: #333;
+          }
+          
+          #bestForDesktop p {
+            margin: 0 0 20px;
+            font-size: 16px;
+            color: #666;
+          }
+          
+          #bestForDesktop button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+          }
+          
+          #bestForDesktop button:hover {
+            background: #0056b3;
+          }
+        }
+
+
 /* Root Container */
 #content{
   /* padding-top: 6rem; */
