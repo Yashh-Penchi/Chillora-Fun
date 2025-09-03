@@ -48,7 +48,7 @@ function goToTopHide() {
   document.getElementById('goToTop').style.display = 'none';
 }
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 100) {
+  if (window.scrollY > innerHeight) {
     goToTopShow();
   } else {
     goToTopHide();

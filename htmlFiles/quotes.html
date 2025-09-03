@@ -29,7 +29,7 @@
 
     <!-- Quote Page Visit Tracking -->
      <p id="quote-visit-tracking">⚠️ If Error loading quotes. Please reload the page 🔄, otherwise ignore this!!</p>
-     <button id="quote-reload-btn" onclick="location.reload();">Reload Page</button>
+     <button id="quote-reload-btn" onclick="location.reload(); window.scrollTo(0, 0);">Reload Page</button>
   </main>
 </div>
 
@@ -67,7 +67,7 @@ async function loadAllQuotes() {
     showRandomQuotes(6); // initial
   } catch (err) {
     console.error("Error loading quotes:", err);
-    grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#999;">⚠️ Could not load quotes.</p>`;
+    grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#999;">⚠️ Could not load quotes, Please check your internet connection.</p>`;
   }
 }
 

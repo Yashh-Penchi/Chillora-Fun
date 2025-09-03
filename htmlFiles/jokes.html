@@ -1,0 +1,249 @@
+<div id="jokesSection" style="width:100%; padding:2rem; background-color:#f9f9f900; display: flex;
+align-items: center;">
+
+<div id="jokesSectionContainer" style="position: relative; background: linear-gradient(135deg, rgba(17,0,255,0.15), rgba(255,255,255,0.6)); display: flex;
+align-items: center; flex-direction: column; border-radius: 16px; padding: 5rem 6rem 3rem; width: 100%; max-width: 1500px; margin: auto; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+
+<div id="jokeGenerateStatus" style="display: flex; user-select: none;
+align-items: center; font-size: 0.8rem; background-color: #ffc5c500; position: absolute; top: calc(3rem); right: 10px; border-radius: 6px; color: #ff0000; padding: 0.3rem 0.7rem; border: 1px dashed #ff9f9f !important;"><span style="width: 5px; height: 5px; background-color: #ff0000; display: inline-block; border-radius: 50%; margin-right: 0.3rem;"></span> Status: <span style="color: rgb(255, 21, 21); font-weight: 200; padding-left: 5px;">...</span></div>
+
+
+<h2 style="text-align:center; font-size:2.5rem; color:#2f27b8; margin-bottom:1rem;">
+    Amazing Jokes <span>😁</span>
+  </h2>
+  <h5 style="text-align:center; font-size:1.2rem; color:#444; margin-bottom:3rem;">
+    😂 Life thodi boring lag rahi ho? Chill, yaha jokes ka unlimited stock hai jo tumhe nonstop hasayega! 😁
+  </h5>
+    <div id="jokesCards" class="cards-box" style="user-select: none; width:100%; display:grid; grid-template-columns:repeat(6,1fr); gap:0.8rem;">
+  <!-- Random Jokes --> 
+   <label class="card" data-cat="random" style="background:#73faff3c; border-radius:6px; padding:0.9rem 1rem; border:1px dashed #009fa5; transition:0.3s; text-align:center; cursor:pointer;">
+    <input type="radio" name="joke-category" id="random-jokes" style="display:none;">
+    <h4 style="font-size:0.9rem; color:#009fa5;">😂 Random Jokes</h4> </label>
+
+  <!-- Kids Jokes -->
+  <label class="card" data-cat="kids" style="background:#d4f8e8; border-radius:6px; padding:0.9rem 1rem; border:1px dashed #009966; transition:0.3s; text-align:center; cursor:pointer;">
+    <input type="radio" name="joke-category" id="kids-jokes" style="display:none;">
+    <h4 style="font-size:0.9rem; color:#007a55;">👶 Kids Jokes</h4>
+  </label>
+
+  <!-- Programming Jokes -->
+  <label class="card" data-cat="programming" style="background:#e0f0ff; border-radius:6px; padding:0.9rem 1rem; border:1px dashed #0066cc; transition:0.3s; text-align:center; cursor:pointer;">
+    <input type="radio" name="joke-category" id="programming-jokes" style="display:none;">
+    <h4 style="font-size:0.9rem; color:#004a99;">💻 Programming Jokes</h4>
+  </label>
+
+  <!-- Dark Humor -->
+  <label class="card" data-cat="dark" style="background:#e8e0ff; border-radius:6px; padding:0.9rem 1rem; border:1px dashed #6d00ba; transition:0.3s; text-align:center; cursor:pointer;">
+    <input type="radio" name="joke-category" id="dark-humor" style="display:none;">
+    <h4 style="font-size:0.9rem; color:#6100a7;">🌑 Dark Humor</h4>
+  </label>
+
+  <!-- Desi Jokes -->
+  <label class="card" data-cat="desi" style="background:#fff0e0; border-radius:6px; padding:0.9rem 1rem; border:1px dashed #e65100; transition:0.3s; text-align:center; cursor:pointer;">
+    <input type="radio" name="joke-category" id="desi-jokes" style="display:none;">
+    <h4 style="font-size:0.9rem; color:#bf360c;">🎭 Desi Jokes</h4>
+  </label>
+
+  <!-- Random Fun -->
+  <label class="card" data-cat="randomfun" style="background:#fce4ec; border-radius:6px; padding:0.9rem 1rem; border:1px dashed #e91e63; transition:0.3s; text-align:center; cursor:pointer;">
+    <input type="radio" name="joke-category" id="random-fun" style="display:none;">
+    <h4 style="font-size:0.9rem; color:#ad1457;">🎲 Random Fun</h4>
+  </label>
+  
+</div>
+      <h5 id="jokeCategoryShow" style="user-select: none; width: max-content; border: 1px dashed #9fa6ff; font-size:1rem; color:#0036b4; margin-bottom:10px; font-weight: 500; padding: 0.2rem 0.6rem; position: relative; left: -25%; background-color: #dff0fe; margin: 3rem auto 1rem;">Category:<span style="font-size: 1rem; color: #0003ae; padding-left: 5px; user-select: auto;">...</span></h5>
+      
+      <div id="resultJokesContainer" class="card" style="margin: 0.5rem auto 0; width: 100%; max-width: 900px; display: grid; grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); gap: 1rem;">
+        <label class="card" style="background:#fff; width: 95%; border-radius:10px; overflow: hidden; padding:15px 20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; cursor:pointer;">
+          <input type="radio" name="joke-generated" class="joke-generated" style="display:none;">
+          <h4 id="mainJokePlaceHere" style="font-size:1.2rem; padding-right: 2.5rem; text-wrap: wrap; color:#555; font-weight: 400;"></h4>
+          <button id="copyBtn" style=" cursor: copy; color:#ffffff; background-color: #0003ae; width: max-content; height: 100%; padding: 0.6rem; position: absolute; right: 0px; top: 0px;"><i style="color: #fff; padding-right: 5px; font-size: 1.5rem;" class="ri-file-copy-2-line"></i><span style="color: #ffffff;"></span></button>
+          <h5 id="jokeFlagsShow" style="user-select: none; margin-top: 0.5rem; font-weight: 400; color: #111;">Flags: <span style="color: #0003ae; font-weight: 200; font-size: 0.7rem; padding-left: 5px; user-select: auto;"></span></h5>
+        </label>
+      </div>
+      
+      <h5 id="jokeTipsShow" style=" width: max-content;font-size:1rem; color:#222; margin-bottom:10px; font-weight: 400; padding: 0.2rem 0.6rem; position: relative; left: -22.5%; margin: 1rem auto 1rem; font-size: 0.8rem;">Tip: Kids = safe-mode, Desi = Misc,Pun, Random Fun = Misc.</h5>
+  
+  <div id="jokesPageButtons" style="margin: 3rem 0;">
+    
+    <button id="getJokesBtn" style="display: inline-block; color: white; border: none; cursor: pointer;">Get My Type's Jokes</button>
+    <!-- <select name="joke-amount" id="joke-amount" style="user-select: none; color: white; border: none; padding: 12px 20px; cursor: pointer; display: inline-block;">
+      <option value="1">1 Joke</option>
+      <option value="2">2 Jokes</option>
+      <option value="3">3 Jokes</option>
+      <option value="4">4 Jokes</option>
+      <option value="5">5 Jokes</option>
+    </select> -->
+  </div>
+  
+</div>
+</div>
+
+<style>
+input[type="radio"]:checked + h4 {
+  color: #ffffff !important;
+}
+
+label:has(input[type="radio"]:checked) {
+  border: 1px dashed #cbc7ff !important;
+  background: #00028f !important;
+    box-shadow: 1px 1px 5px 0px #0217b44d;
+}
+
+.joke-generated[type="radio"]:checked + h4 {
+  color: #000ba9 !important;
+}
+label:has(.joke-generated[type="radio"]:checked) {
+  border: 1px dashed #060059 !important;
+  background: #ffffff !important;
+    box-shadow: 1px 1px 5px 0px #0217b44d;
+}
+
+  #getJokesBtn{
+    position: relative;
+    background: linear-gradient(45deg, #5049e3, #2a23ad); 
+    /* border-radius: 8px 0 0 8px; */
+    border-radius: 8px;
+    padding: 12px 28px 12px 24px;
+    transition: background 0.3s ease;
+  }
+  #getJokesBtn i{
+    position: absolute;
+    transition: rotate 0.3s ease;
+    top: 35%;
+    right: 4%;
+  }
+  #getJokesBtn:hover i{
+    rotate: 90deg;
+  }
+#jokesPageButtons:hover #getJokesBtn {
+  background: linear-gradient(45deg, #2a23ad, #5049e3); 
+}
+/* #joke-amount{
+  background: linear-gradient(45deg, #2a23ad, #5049e3); 
+  transition: background 0.3s ease;
+  border-radius: 0px 8px 8px 0px;
+} */
+/* #jokesPageButtons:hover #joke-amount {
+  background: linear-gradient(45deg, #5049e3, #2a23ad); 
+  } */
+  /* #joke-amount option {
+    background: white; 
+    color: black;
+  } */
+  
+</style>
+
+<!-- script of the Page -->
+<script>
+
+
+      // Category - URL map
+      const MAP = {
+        random: { url: "https://v2.jokeapi.dev/joke/Any", label: "Any (Random)" },
+        kids: { url: "https://v2.jokeapi.dev/joke/Any?safe-mode", label: "Kids (Safe Mode)" },
+        programming: { url: "https://v2.jokeapi.dev/joke/Programming", label: "Programming" },
+        dark: { url: "https://v2.jokeapi.dev/joke/Dark", label: "Dark" },
+        desi: { url: "https://v2.jokeapi.dev/joke/Misc,Pun", label: "Desi (Misc+Pun)" },
+        randomfun: { url: "https://v2.jokeapi.dev/joke/Misc", label: "Random Fun (Misc)" },
+      };
+
+      const statusJokeEl = document.querySelector("#jokeGenerateStatus span:last-child");
+      const catLabel = document.querySelector("#jokeCategoryShow span");
+      const jokeBox = document.querySelector("#mainJokePlaceHere");
+      const flagsEl = document.querySelector("#jokeFlagsShow span");
+      const copyBtn = document.querySelector("#copyBtn");
+      const getJokeBtn = document.getElementById("getJokesBtn");
+
+let currentKey = null; // global variable
+
+
+      async function getJoke(key, amount = 1) {  // Amount k option baad me badlunga (Agar abhi badlunga to Joke Text Load and copy btn functionality change karni padegi)
+        const cfg = MAP[key];
+        if(!cfg) return;
+
+        statusJokeEl.textContent = "Loading...";
+        catLabel.textContent = cfg.label;
+        flagsEl.textContent = "";
+
+        try{
+          const ress = await fetch(cfg.url);
+          const dataa = await ress.json();
+
+          if (dataa.error) {
+            throw new Error(dataa.message || "API error");
+          } 
+
+          // main Joke Text
+          let jokeText = "";
+
+          if(dataa.type === "single") {
+            jokeText = dataa.joke;
+          } else if(dataa.type === "twopart") {
+            jokeText = `${dataa.setup}\n\n${dataa.delivery}`;
+          } else {
+            jokeText = "Hmm, kuch toh gadbad hai. Joke nahi mil pa raha.";
+          }
+          jokeBox.textContent = jokeText || "No joke found. Try again.";
+
+          // show flags
+
+          const fl = dataa.flags || {};
+          const onFlags = Object.keys(fl).filter((k) => fl[k]);
+          if(onFlags.length) {
+            flagsEl.textContent = onFlags.join(", ");
+          } else {
+            flagsEl.textContent = "None";
+          }
+
+          statusJokeEl.textContent = "Done";
+        } catch(err) {
+          console.error(err);
+          statusJokeEl.textContent = "Error";
+          jokeBox.textContent = "Oops! Could not fetch a joke. Try again.";
+          flagsEl.textContent = "";
+          }
+        }
+
+          // button event
+
+          document.querySelectorAll("label[data-cat]").forEach(labelTap => {
+            labelTap.addEventListener("click", (e) => {
+              e.preventDefault(); 
+               // e.preventDefault(), isse Joke Load hokar automatically 0.3s me dobara new load nahi hoga, jo radio change se dikkat aa rahi thi !
+               // iski jagah, if (input.checked) { 'neeche ki dono line aayegi' }  bhi kar sakte the !! jisse bhi jitter nahi aata
+              currentKey = labelTap.getAttribute("data-cat");
+              getJoke(currentKey);
+            });
+          });
+
+          // get Joke Btn Event
+          getJokeBtn.addEventListener("click", () => {
+            if(currentKey) {
+              getJoke(currentKey);
+              setTimeout(() => { getJokeBtn.innerHTML='Get More Jokes <i style="font-size: 14px; color: white;" class="ri-refresh-line"></i>'; }, 1000);
+            } else {
+              alert("Please select a joke category first!");
+            }
+          });
+
+
+          // Copy Btn Event
+          copyBtn.addEventListener("click", async () => {
+            const jokeTextCopy = jokeBox.textContent.trim();
+            if (!jokeTextCopy) {
+              alert("No joke to copy!");
+              return;
+            }
+            try {
+              await navigator.clipboard.writeText(jokeTextCopy);
+              statusJokeEl.textContent = "Joke copied!";
+            } catch (err) {
+              statusJokeEl.textContent = "Failed to copy joke.";
+              console.error("Failed to copy joke: ", err);
+            }
+            setTimeout(() => { statusJokeEl.textContent = ""; }, 2500);
+          });
+
+
+</script>

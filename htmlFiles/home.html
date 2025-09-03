@@ -84,7 +84,7 @@ justify-content: space-between;">
   align-items: center; flex-direction: column;">
     <h2 style="z-index: 2;text-align: center; padding: 2rem 0 1.5rem 0; font-size: 3rem; color: #2f27b8; position: relative;">Amazing Jokes <span>😁</span></h2>
     <h5 style="color: #222; font-weight: 200; text-align: center; font-size: 1.5rem;">Laughter is the best medicine, aur yaha milega unlimited dose! <span>💉</span></h5>
-    <button style="user-select: none; margin: 3rem 0; padding: 0.6rem 1.7rem; border-radius: 2px; color: #fff; font-size: 1rem">Go to Jokes</button>
+    <button onclick="loadIntoContent('./htmlFiles/jokes.html'); window.scrollTo(0, 0);" style="user-select: none; margin: 3rem 0; padding: 0.6rem 1.7rem; border-radius: 2px; color: #fff; font-size: 1rem">Go to Jokes</button>
   </div>
 </div>
 <div id="jokesCenterLine" style="height: 80%; width: 2px; background: linear-gradient(0deg, transparent, #2f27b8, transparent);"></div>
@@ -289,7 +289,7 @@ align-items: center; justify-content: center;">
     </button>
   </div>
 
-  <div id="goToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); goToTopHide()" style="position: fixed; background-color: #f4f4f4; padding: 0.4rem 1rem 0.4rem 1rem; top: 50%; transform: translate(0, -50%); box-shadow: 2px 2px 5px 0px #00000017; right: 0rem; border-radius: 2px; cursor: pointer;"><i style="font-size: 1.5rem; color: #555;" class="ri-arrow-up-double-line"></i></div>
+  <div id="goToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); goToTopHide()" style="position: fixed; rotate: 90deg; background-color: #f5f5f5; padding: 0.4rem 1rem 0.4rem 1rem; top: 50%; transform: translate(0, -50%); box-shadow: 2px 2px 5px 0px #00000027; right: 1%; border-radius: 2px; cursor: pointer;"><i style="font-size: 1.5rem; color: #555;" class="arrow-up-doublee-line">⪛</i></div>
 
 </div>
 
