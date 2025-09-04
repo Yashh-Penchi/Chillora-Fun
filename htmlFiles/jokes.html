@@ -51,8 +51,14 @@ align-items: center; font-size: 0.8rem; background-color: #ffc5c500; position: a
   </label>
   
 </div>
-      <h5 id="jokeCategoryShow" style="user-select: none; width: max-content; border: 1px dashed #9fa6ff; font-size:1rem; color:#0036b4; margin-bottom:10px; font-weight: 500; padding: 0.2rem 0.6rem; position: relative; left: -25%; background-color: #dff0fe; margin: 3rem auto 1rem;">Category:<span style="font-size: 1rem; color: #0003ae; padding-left: 5px; user-select: auto;">...</span></h5>
-      
+<div id="jokeCateContainer" style="width: 80%; position: relative; display: flex; align-items: center; padding: 1rem 3rem; gap: 1rem; margin-top: 2rem;">
+  <select name="joke-lang" id="joke-lang" style="position: relative; padding: 8px 12px; font-size: 14px; border-radius: 6px; user-select: none; background: #222; color: white; border: none; cursor: pointer;">
+    <option value="english" style="background-color: #fff; color: #000;">English</option>
+    <option value="hindi" style="background-color: #000000; color: #ffffff;">Hindi</option>
+  </select>
+  <h5 id="jokeCategoryShow" style="user-select: none; width: max-content; border: 1px dashed #9fa6ff; font-size:1rem; color:#0036b4; font-weight: 500; padding: 0.2rem 0.6rem; position: relative; background-color: #dff0fe;">Category:<span style="font-size: 1rem; color: #0003ae; padding-left: 5px; user-select: auto;">...</span></h5>
+</div>
+  
       <div id="resultJokesContainer" class="card" style="margin: 0.5rem auto 0; width: 100%; max-width: 900px; display: grid; grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); gap: 1rem;">
         <label class="card" style="background:#fff; width: 95%; border-radius:10px; overflow: hidden; padding:15px 20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; cursor:pointer;">
           <input type="radio" name="joke-generated" class="joke-generated" style="display:none;">
@@ -154,6 +160,7 @@ label:has(.joke-generated[type="radio"]:checked) {
       const flagsEl = document.querySelector("#jokeFlagsShow span");
       const copyBtn = document.querySelector("#copyBtn");
       const getJokeBtn = document.getElementById("getJokesBtn");
+      const langSelect = document.getElementById("joke-lang");
 
 let currentKey = null; // global variable
 
@@ -184,8 +191,19 @@ let currentKey = null; // global variable
           } else {
             jokeText = "Hmm, kuch toh gadbad hai. Joke nahi mil pa raha.";
           }
-          jokeBox.textContent = jokeText || "No joke found. Try again.";
+          
+            if (langSelect.value === "hindi" ) {
 
+              async function translateText(transitionTextInput) {
+              const urlTranslate = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(jokeText)}&langpair=en|hi`;
+              const resTranslate = await fetch(urlTranslate);
+              const dataTranslate = await resTranslate.json();
+              jokeBox.textContent = dataTranslate.responseData.translatedText || "No joke found. Try again.";
+                }
+                translateText(jokeText);
+              } else {
+                    jokeBox.textContent = jokeText || "No joke found. Try again.";
+            }
           // show flags
 
           const fl = dataa.flags || {};
