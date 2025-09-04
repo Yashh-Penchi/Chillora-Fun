@@ -25,8 +25,7 @@ async function loadIntoContent(url) {
 }
 
 // Load initial content
-// loadIntoContent('./htmlFiles/home.html');
-loadIntoContent('./htmlFiles/fakeText.html');
+loadIntoContent('./htmlFiles/home.html');
 
 
 // Header
